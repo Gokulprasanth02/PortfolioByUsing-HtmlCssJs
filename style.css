@@ -13,69 +13,199 @@ body {
     background-color: #080808;
     color: #fff;
 }
+
 .right-image {
     float: right;
     margin-left: 15px;
-    margin-top: -100px;
-    opacity: 0; 
-    transform: translateY(20px) scale(0.7); 
+    margin-top: -137px;
+    opacity: 0;
+    transform: translateY(20px) scale(0.7);
     animation: fadeInAndBounce 1.5s ease-in-out forwards;
 }
 
 @keyframes fadeInAndBounce {
     0% {
         opacity: 0;
-        transform: translateY(20px) scale(0.7); 
+        transform: translateY(20px) scale(0.7);
     }
+
     50% {
         opacity: 0.7;
         transform: translateY(0) scale(1.1);
     }
+
     100% {
         opacity: 1;
-        transform: translateY(0) scale(1); 
+        transform: translateY(0) scale(1);
     }
 }
 
-  #header {
+/* ----------------Adding Whatsapp icon-------------------- */
+#whatsapp .wtsapp {
+    position: fixed;
+    transform: all 0.5s ease;
+    background-color: #25d366;
+    display: block;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    border-left: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    bottom: 25px;
+    right: 25px;
+    border: 0;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+
+#whatsapp .wtsapp::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #25d366;
+    border-radius: 50%;
+    -webkit-animation: pulse-border 1500ms ease-out infinite;
+    animation: pulse-border 1500ms ease-out infinite;
+}
+
+#whatsapp .wtsapp:focus {
+    border: none;
+    outline: none;
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* -------------------Adding Social media icons in Home Page---------------------------- */
+.social-media-icons {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    left: 2rem;
+    z-index: 3;
+    transition: transform 0.5s;
+    animation: fadeInAndBounce 1.5s ease-in-out forwards;
+
+}
+
+.line-space {
+    line-height: 1.6;
+}
+
+.social-media-icons a {
+    color: #037cc2;
+}
+
+.social-media-icons a:hover {
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+
+.line-light {
+    height: 10rem;
+    width: 2px;
+    background-color: #ff004f;
+}
+
+@keyframes fadeInAndBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.7);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: translateY(0) scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+#header {
     width: 100%;
     height: 100vh;
     background-image: url(iamge/Front\ page\ background\ image.jpg);
     background-size: cover;
     background-position: center;
 }
-#explorebutton{
-    width: 200px;
+
+.explorebutton {
+    width: 70px;
     padding: 15px 0;
     text-align: center;
     margin: 20px 10px;
     border-radius: 25px;
     font-weight: bold;
-    border: 2px solid #009688;
-    background: transparent;
+    border: 3px solid #037cc2;
     color: #fff;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    
-}
-#span1{
-   background: #009688;
-   height: 100%;
-   width: 0;
-   border-radius: 25px;
-   position: absolute;
-   left: 0;
-   bottom: 0;
-   z-index: -1;
-   transition: 0.5s;
-}
-button:hover #span1 {
-    width: 100%;
+    background: transparent;
+    /* transition: 0.5s; */
+    margin-top: 50px;
 }
 
-button:hover {
+.fa-download {
+    font-size: 200%;
+}
+
+#dwl-button {
+    font-size: 200%;
+}
+
+.explorebutton:hover {
+    background-color: #009688;
+    color: #fff;
     border: none;
+    transition: 0.5s;
+}
+
+.explorebutton::before {
+    content: "";
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* transition: 0.5s; */
+}
+
+
+.homepage {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-style: bold;
+    color: #51b5ef;
+    font-size: 20px;
+    line-height: 1.5;
 }
 
 .container {
@@ -138,6 +268,7 @@ nav ul li a:hover::after {
     height: 750px;
     background-color: #b6b6b6;
     color: #454545;
+
 }
 
 .row {
@@ -454,6 +585,7 @@ form .btn2 {
     margin-top: -10px;
     display: block;
 }
+
 /* -----------------Scrollbar Button----------------- */
 ::-webkit-scrollbar {
     width: 15px;
